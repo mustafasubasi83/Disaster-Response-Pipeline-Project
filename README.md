@@ -45,9 +45,4 @@ Data includes 2 csv files:
 * [Udacity](https://www.udacity.com/) for providing an amazing Data Science Nanodegree Program
 * [Figure Eight](https://www.figure-eight.com/) for providing the relevant dataset to train the model
 
-2. Run the following command in the app's directory to run your web app. (To change the app's directory, you can use 'cd app' commant.)
-    `python run.py`
-
-3. Go to http://0.0.0.0:3001/
-
 
