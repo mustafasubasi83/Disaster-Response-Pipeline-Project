@@ -29,8 +29,20 @@ Data includes 2 csv files:
         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
     - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl models/vocabulary_stats.pkl models/category_stats.pkl`
+        
+<a name="license"></a>
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-2. Run the following command in the app's directory to run your web app.
+<a name="acknowledgement"></a>
+## Acknowledgements
+
+* [Udacity](https://www.udacity.com/) for providing an amazing Data Science Nanodegree Program
+* [Figure Eight](https://www.figure-eight.com/) for providing the relevant dataset to train the model
+
+2. Run the following command in the app's directory to run your web app. (To change the app's directory, you can use 'cd app' commant.)
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
+
