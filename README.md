@@ -94,7 +94,8 @@ The list of the files used in this project are:
 
 - This is an example of a message we can type to test the performance of the model. After clicking Classify Message, we can see the categories which the message belongs to highlighted in green
 
-![alt Disaster-Response-Pipeline-Project]](WebApp_ScreenShots/Disaster Response Project _ Analyzing message data)
+![Message_Data_Analyze](Images/Message.png)
+
 
 
 <a name="license"></a>
