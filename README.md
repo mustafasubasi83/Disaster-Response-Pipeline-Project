@@ -84,6 +84,18 @@ The list of the files used in this project are:
 4. In the box on the top enter the message to classify and click on the "Classify Message" button.
 
 
+### Web App Screen Shots:
+
+- The main page shows some graphs about training dataset, provided by Figure Eight
+
+![alt Disaster Response Project](WebApp_ScreenShots/Disaster Response Project _ Web App Main Page)
+
+
+- This is an example of a message we can type to test the performance of the model. After clicking Classify Message, we can see the categories which the message belongs to highlighted in green
+
+![alt Disaster Response Project](WebApp_ScreenShots/Disaster Response Project _ Analyzing message data)
+
+
 <a name="license"></a>
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
