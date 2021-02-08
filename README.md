@@ -88,7 +88,7 @@ The list of the files used in this project are:
 
 - The main page shows some graphs about training dataset, provided by Figure Eight
 
-![alt Disaster-Response-Pipeline-Project](WebApp_ScreenShots/Disaster Response Project _ Web App Main Page)
+
 ![Main Page](/WebApp_ScreenShots/Disaster Response Project _ Web App Main Page)
 
 
