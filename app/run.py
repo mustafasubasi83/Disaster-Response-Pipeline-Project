@@ -40,12 +40,14 @@ model = joblib.load("../DisasterResponseModel.pkl")
 def index():
     
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
+   
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    label_sums = df.iloc[:, 4:].sum()
+    label_names = list(label_sums.index)
+    
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
             'data': [
@@ -64,8 +66,28 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        {
+            'data': [
+                Bar(
+                    x=label_names,
+                    y=label_sums,
+                )
+            ],
+
+            'layout': {
+                
+                'title': 'Distribution of message category',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
+                },
+            }
         }
     ]
+    
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
