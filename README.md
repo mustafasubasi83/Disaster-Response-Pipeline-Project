@@ -1,40 +1,87 @@
 # Disaster-Response-Pipeline-Project
 
-### Description:
 
-This Project is a part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The initial dataset contains pre-labelled tweet and messages from real-life disasters. The aim of this project is to build a Natural Language Processing tool that categorize messages.
+This project implements a classifier model to categorize messages sent by people during natural disasters. After classification, the messages can be directed to the appropriate disaster relief agency. The training data provided by Figure Eight was mined using ETL and natural language processing pipelines.
+
+
+### Project description
 
 The Project is divided into the following Sections:
 
-1. Data Processing, ETL Pipeline to extract data from source, clean data and save them in a proper databse structure.
-2. Machine Learning Pipeline to train a model which is able to classify text messages in 36 categories.
-3. Web Application using Flask to show model results and predictions in real time.
+#### 1. Data Processing, ETL Pipeline to extract data from source, clean data and save them in a proper databse structure.
 
-### Data:
+A Python script, `process_data.py`, contains the data cleaning pipeline that:
 
-The data in this project comes from Figure Eight - Multilingual Disaster Response Messages. This dataset contains 30,000 messages drawn from events including an earthquake in Haiti in 2010, an earthquake in Chile in 2010, floods in Pakistan in 2010, super-storm Sandy in the U.S.A. in 2012, and news articles spanning a large number of years and 100s of different disasters.
+- Loads the `messages` and `categories` datasets
+- Merges the two datasets
+- Cleans the data
+- Stores it in an SQLite database
 
-The data has been encoded with 36 different categories related to disaster response and has been stripped of messages with sensitive information in their entirety.
+#### 2. Machine Learning Pipeline to train a model which is able to classify text messages in 36 categories
 
-Data includes 2 csv files:
+A Python script, `train_classifier.py`, that holds the code of the machine learning pipeline that:
 
-1. disaster_messages.csv: Messages data.
-2. disaster_categories.csv: Disaster categories of messages.
+- Loads data from the SQLite database saved before
+- Splits the dataset into training and test sets
+- Builds a text processing and machine learning pipeline
+- Trains and tunes a model using GridSearchCV
+- Outputs results on the test set
+- Exports the final model as a pickle file
 
+#### 3. Web Application using Flask to show model results and predictions in real time.
+
+Holds the code of the Web Interface from which the end-user will enter the message's text to get the predictions. This page will guide the emergency worker providing predictions about the type of emergency at hand.
+
+#### Files description
+
+The list of the files used in this project are:
+
+```sh
+- app
+|  - template
+|  |- master.html   # main page of web app
+|  |- go.html       # classification result page of web app
+|- run.py           # Flask file that runs the app
+
+- data
+|- disaster_categories.csv  # data to process
+|- disaster_messages.csv    # data to process
+|- process_data.py          # process data and saves it into a database
+|- DisasterResponse.db      # database to save clean data to
+
+- models
+|- train_classifier.py  # machine learning modeling and prediction
+|- DisasterResponseModel.pkl     # saved model
+
+
+- README.md
+```
 
 ### Instructions:
+
 1. Run the following commands in the project's root directory to set up your database and model.
 
-    - To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl models/vocabulary_stats.pkl models/category_stats.pkl`
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+    - To run ETL pipeline that loads the source CSV files, cleans them and stores the cleaned resulting Pandas Dataframe in a database. Run the following under the `data` directory.
 
-2. Run the following command in the app's directory to run your web app. (You can use 'cd app' commant for changing the app's directory in Udacity Workspace)
-    `python run.py`
+        ```
+        python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
+        ```
 
-3. Go to http://0.0.0.0:3001/      
+    - To run ML pipeline that trains classifier and saves the model in a pickle file run the following from the `models` directory:
+
+        ```
+        python train_classifier.py ../data/DisasterResponse.db classifier.pkl
+        ```
+
+2. Run the following command in the `app` directory to run the web application in order to do predictions:
+
+    ```
+    python run.py
+    ```
+
+3. Then go to http://0.0.0.0:3001/ to launch the web interface of the application
+
+4. In the box on the top enter the message to classify and click on the "Classify Message" button.
 
 
 <a name="license"></a>
