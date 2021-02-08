@@ -89,7 +89,7 @@ The list of the files used in this project are:
 - The main page shows some graphs about training dataset, provided by Figure Eight
 
 
-![Main Page](Disaster-Response-Pipeline-Project/WebApp_ScreenShots/Disaster Response Project _ Web App Main Page.png)
+![Main Page](Disaster-Response-Pipeline-Project/WebApp_ScreenShots/Disaster%20Response%20Project%20_%20Web%20App%20Main%20Page.png)
 
 
 - This is an example of a message we can type to test the performance of the model. After clicking Classify Message, we can see the categories which the message belongs to highlighted in green
