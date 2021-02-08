@@ -21,7 +21,6 @@ Data includes 2 csv files:
 1. disaster_messages.csv: Messages data.
 2. disaster_categories.csv: Disaster categories of messages.
 
-# Disaster Response Pipeline Project
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
